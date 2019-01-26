@@ -1,0 +1,51 @@
+<h2>Menu</h2>
+<ul class="nav">
+<li><%= link_to 'Home', home_path %></li>
+<li><%= link_to 'About', about_path %></li>
+<li><%= link_to 'My Profile', profile_path %></li>
+</ul>
+<h1><%=image_tag('adobe_lr.png',  style: 'width: 5%;') %> Adobe Lightroom</h1>
+<h5>(Photo and video editing software.)</h5>    
+<h3>Rating:<%=image_tag('rating.png', style: 'width: 5%;') %></h3>
+<p>Adobe Lightroom (officially Adobe Photoshop Lightroom) is a family of image 
+organization and image manipulation software developed by Adobe Systems for Windows, 
+macOS, iOS, Android, and tvOS (Apple TV). </p>
+<h2>My thought's for this software:</h2>
+        <p>I use lightroom mostly for editing photos as the process is quick and even we can 
+        use the presets of others and also even we can use ours by creating and saving our own 
+        presets for future use.It allows importing/saving, viewing, organizing, tagging, editing, 
+        and sharing large numbers of digital images. Unlike Photoshop, Lightroom's edits are always 
+        non-destructive by keeping the original image and the edits applied to it saved separately. 
+        Despite sharing its name with Adobe Photoshop, it cannot perform many Photoshop functions 
+        such as doctoring (adding,removing or altering the appearance of individual image items),
+        rendering text or 3D objects on images, or modifying individual video frames. It cannot 
+        operate on files unless they are imported into its database first, and only in recognized 
+        image formats.</p>
+<section class="container">
+    <div class="one">
+        <%=image_tag('adobe_lr1.jpg', style: 'width: 100%;') %>  
+    </div>
+    <div class="two">
+        <h3>Post in your thought's regarding this software</h3>
+        <p>Name: <%= text_field "person", "name", "size" => 20 %></p>
+        <p>Gender:<%= select_tag(:gender_id, options_for_select([['', 0], ['Male', 1], ['Female', 2]])) %>
+</p>
+        
+
+        <p>Your Review:</p>
+        <%= text_area "post", "body", "cols" => 25, "rows" => 5%>
+        </br>
+        <p>Select a rating for the software:</p>
+        <%= radio_button "post", "category", "excellent" %>Excellent
+        <%= radio_button "post", "category", "best" %>Best
+        <%= radio_button "post", "category", "good" %>Good
+        <%= radio_button "post", "category", "average" %>Average
+        <%= radio_button "post", "category", "bad" %>Bad
+        </br>
+        <%= button_tag("Submit")%>
+
+
+
+    </div>
+</section>
+
